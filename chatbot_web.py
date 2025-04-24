@@ -31,6 +31,6 @@ if user_input:
         if st.button("Pipeline Details"):
             st.info("BSM Link: https://mariapps.sharepoint.com/...")
     else:
-        st.warning("Sorry I didn't get that. Try 'cma', 'bsm', or 'exit'. I'm specifically created for providing MA ETL details.")
+        st.warning("Sorry I didn't get that. Try 'cma', 'bsm', or 'exit'. I'm created specifically for providing MA ETL details.")
 
 
