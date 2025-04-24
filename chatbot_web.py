@@ -29,3 +29,6 @@ if user_input:
             st.info("BSM Link: https://mariapps.sharepoint.com/...")
     else:
         st.warning("I didn't get that. Try 'cma', 'bsm', or 'exit'")
+
+# Clear the input after handling
+    st.session_state.input = ""
