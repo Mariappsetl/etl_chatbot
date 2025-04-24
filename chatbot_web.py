@@ -17,7 +17,7 @@ if user_input:
         st.write("Hi, I'm MA-BI team chatbot Beta version ask me things related to BI team ETL projects CMA or BSM")
         st.session_state.input = ""
     elif lower_input == "who are you":
-    st.write("I'm the MA-BI Team chatbot 🤖, here to assist you with info related to our ETL projects in CMA and BSM.")
+    st.write("I'm the MA-BI Team chatbot , here to assist you with info related to our ETL projects in CMA and BSM.")
 
 elif lower_input == "who is your developer":
     st.write("I was developed by the MA-BI Team to make accessing ETL-related info easier and quicker!")
