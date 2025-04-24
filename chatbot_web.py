@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Minimal Chatbot", layout="centered")
 
-st.image("https://www.google.co.in/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fimages%2Fsearch%2Frobot%2F&psig=AOvVaw0zLusNqi6xkrtbtl1sFGL1&ust=1745578451115000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOjevc7A8IwDFQAAAAAdAAAAABAE", width=80)
+st.image("https://www.mariapps.com/wp-content/uploads/team_shankar.png", width=80)
 st.markdown("### Minimal Chatbot")
 
 user_input = st.text_input("Ask me about CMA or BSM (type 'exit' to quit):")
