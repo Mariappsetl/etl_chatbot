@@ -1,9 +1,9 @@
 import streamlit as st
 
-st.set_page_config(page_title="Minimal Chatbot", layout="centered")
+st.set_page_config(page_title="MA-BI Team Chatbot", layout="centered")
 
 st.image("https://www.mariapps.com/wp-content/uploads/team_shankar.png", width=80)
-st.markdown("### Minimal Chatbot")
+st.markdown("### MA-BI Team Chatbot")
 
 user_input = st.text_input("Ask me about CMA or BSM (type 'exit' to quit):")
 
