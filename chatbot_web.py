@@ -13,7 +13,7 @@ if user_input:
 
     if lower_input == "exit":
         st.success("Goodbye! 👋")
-    if lower_input =="Hi":
+    if lower_input == "Hi":
         st.write("Hi, I'm MA-BI team chatbot Beta version ask me things related to BI team ETL projects CMA or BSM")
     elif "cma" in lower_input:
         st.write("What do you want to know in CMA?")
