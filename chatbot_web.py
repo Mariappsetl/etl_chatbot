@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(page_title="MA-BI Team Chatbot", layout="centered")
 
-st.image("https://imgur.com/TomeB9U", width=80)
+st.image("blob:https://imgur.com/f524ff62-faa0-42f3-a87f-a768c4b80cf4", width=80)
 st.markdown("### MA-BI Team Chatbot")
 
 user_input = st.text_input("Ask me about CMA or BSM (type 'exit' to quit):")
