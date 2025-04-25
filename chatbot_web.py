@@ -1,17 +1,47 @@
 import streamlit as st
+import pandas as pd
+import requests
+from io import BytesIO
 
 st.set_page_config(page_title="MA-BI Team Chatbot", layout="centered")
-
 st.image("https://cdn.pixabay.com/photo/2016/12/13/21/20/alien-1905155_640.png", width=80)
 st.markdown("### MA-BI Team Chatbot")
+
+# ✅ Replace this with your actual raw GitHub Excel file URL
+GITHUB_RAW_URL = "https://github.com/Mariappsetl/etl_chatbot/commit/4335cf66ea9479fef5f95aa99e283a730ba8f835"
+
+@st.cache_data
+def load_pipeline_data():
+    response = requests.get(GITHUB_RAW_URL)
+    if response.status_code == 200:
+        excel_data = BytesIO(response.content)
+        df = pd.read_excel(excel_data)
+        df.columns = df.columns.str.strip()
+        df['Table Name'] = df['Table Name'].str.strip().str.lower()
+        df['Pipeline Name'] = df['Pipeline Name'].fillna(method='ffill')
+        return df
+    else:
+        st.error("Failed to load Excel file from GitHub.")
+        return pd.DataFrame()
+
+df_pipeline = load_pipeline_data()
 
 user_input = st.text_input("Ask me about CMA or BSM (type 'exit' to quit):")
 
 if user_input:
     st.write(f"You: {user_input}")
-    lower_input = user_input.lower()
+    lower_input = user_input.lower().strip()
 
-    if lower_input == "exit":
+    if lower_input.startswith("table:"):
+        table_name = lower_input.split("table:")[1].strip()
+        match = df_pipeline[df_pipeline["Table Name"] == table_name]
+        if not match.empty:
+            pipelines = match["Pipeline Name"].unique()
+            st.success(f"Pipeline(s) for table `{table_name}`: {', '.join(pipelines)}")
+        else:
+            st.warning(f"No pipeline found for table name: `{table_name}`")
+
+    elif lower_input == "exit":
         st.success("Goodbye! 👋")
     elif lower_input == "hi":
         st.write("Hi, I'm MA-BI team chatbot Beta version. Ask me things related to BI team ETL projects: CMA or BSM")
@@ -50,4 +80,4 @@ if user_input:
         if st.button("Pipeline Details"):
             st.info("BSM Link: https://mariapps.sharepoint.com/...")
     else:
-        st.warning("Sorry I didn't get that. Try 'cma', 'bsm', or 'exit'. I'm created specifically for providing MA ETL details.")
+        st.warning("Sorry I didn't get that. Try 'table: <table_name>' or keywords like 'cma', 'bsm', 'exit'.")
