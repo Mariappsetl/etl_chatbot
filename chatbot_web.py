@@ -42,12 +42,12 @@ if user_input:
         if st.button("Subscription"):
             st.info("http://www.mariapps.com/")
         if st.button("Pipeline Details"):
-            st.info("CMA Link: https://mariapps.sharepoint.com/...")
+            st.info("CMA Link: http://www.mariapps.com/")
     elif "bsm" in lower_input:
         st.write("What do you want to know in BSM?")
         if st.button("Subscription"):
             st.info("http://www.mariapps.com/")
         if st.button("Pipeline Details"):
-            st.info("BSM Link: https://mariapps.sharepoint.com/...")
+            st.info("BSM Link:http://www.mariapps.com/")
     else:
         st.warning("Sorry I didn't get that. Try 'cma', 'bsm', or 'exit'. I'm created specifically for providing MA ETL details.")
