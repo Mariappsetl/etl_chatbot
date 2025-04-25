@@ -40,13 +40,13 @@ if user_input:
     elif "cma" in lower_input:
         st.write("What do you want to know in CMA?")
         if st.button("Subscription"):
-            st.info("https://mariapps.sharepoint.com/:i:/s/bsm-bi/ES15Kg-qVkBKlazafQlA7ZEBgl7azTKMMTht3zny8BhM7A?e=p82fmY")
+            st.info("http://www.mariapps.com/")
         if st.button("Pipeline Details"):
             st.info("CMA Link: https://mariapps.sharepoint.com/...")
     elif "bsm" in lower_input:
         st.write("What do you want to know in BSM?")
         if st.button("Subscription"):
-            st.info("https://mariapps.sharepoint.com/:i:/s/bsm-bi/ER-qv25h-vhIvxw4_jVnqcoBYunBMV_Ntdhe_VvajA9DpA?e=w8eggm")
+            st.info("http://www.mariapps.com/")
         if st.button("Pipeline Details"):
             st.info("BSM Link: https://mariapps.sharepoint.com/...")
     else:
