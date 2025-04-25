@@ -40,14 +40,26 @@ if user_input:
     elif "cma" in lower_input:
         st.write("What do you want to know in CMA?")
         if st.button("Subscription"):
-            st.info("https://mariapps.sharepoint.com/:i:/s/bsm-bi/ES15Kg-qVkBKlazafQlA7ZEBgl7azTKMMTht3zny8BhM7A?e=p82fmY")
+            st.components.v1.html(
+                "<script>window.open('https://mariapps.sharepoint.com/:i:/s/bsm-bi/ES15Kg-qVkBKlazafQlA7ZEBgl7azTKMMTht3zny8BhM7A?e=p82fmY')</script>",
+                height=0,
+            )
         if st.button("Pipeline Details"):
-            st.info("CMA Link: https://mariapps.sharepoint.com/...")
+            st.components.v1.html(
+                "<script>window.open('https://mariapps.sharepoint.com/...')</script>",
+                height=0,
+            )
     elif "bsm" in lower_input:
         st.write("What do you want to know in BSM?")
         if st.button("Subscription"):
-            st.info("https://mariapps.sharepoint.com/:i:/s/bsm-bi/ER-qv25h-vhIvxw4_jVnqcoBYunBMV_Ntdhe_VvajA9DpA?e=w8eggm")
+            st.components.v1.html(
+                "<script>window.open('https://mariapps.sharepoint.com/:i:/s/bsm-bi/ER-qv25h-vhIvxw4_jVnqcoBYunBMV_Ntdhe_VvajA9DpA?e=w8eggm')</script>",
+                height=0,
+            )
         if st.button("Pipeline Details"):
-            st.info("BSM Link: https://mariapps.sharepoint.com/...")
+            st.components.v1.html(
+                "<script>window.open('https://mariapps.sharepoint.com/...')</script>",
+                height=0,
+            )
     else:
         st.warning("Sorry I didn't get that. Try 'cma', 'bsm', or 'exit'. I'm created specifically for providing MA ETL details.")
